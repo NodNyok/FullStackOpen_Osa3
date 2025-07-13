@@ -134,7 +134,6 @@ const App = () => {
           `${newName} is already added to the notebook, replace the old number with a new one?`
         )
       ) {
-        // Ongelma oli tässä, response -osassa ei saanut olla .data perässä
         personService
           .update(matchedPerson.id, nameObject)
           .then((response) => {
@@ -193,7 +192,7 @@ const App = () => {
     setFilter(event.target.value);
   };
 
-  // boolean jolla filtteröidään nimien listasta filtteriä vastaavat nimet <Notification message={successMessage} />
+  // boolean jolla filtteröidään nimien listasta filtteriä vastaavat nimet
   const namesToShow = filter
     ? persons.filter((person) => person.name.toLowerCase().includes(filter))
     : persons;
